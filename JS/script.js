@@ -2,8 +2,10 @@ const daysId = document.getElementById('days');
 const hoursId = document.getElementById('hours');
 const minsId = document.getElementById('mins');
 const secId = document.getElementById('sec');
+const nextYearId = document.getElementById('nextYear');
 
-const newYear = "1 Jan 2022"
+const currentYear = new Date().getFullYear()
+const newYear = "1 Jan " + (currentYear + 1)
 
 function countdown()
 {
@@ -17,7 +19,9 @@ function countdown()
     const seconds = Math.floor(totolSeconds) % 60;
 
     // console.log(days , hours , minutes , seconds);
+    console.log(new Date().getFullYear());
 
+    nextYearId.innerHTML = "Until new beginnings " + (currentYear + 1)
     daysId.innerHTML = days;
     hoursId.innerHTML = hours;
     minsId.innerHTML = minutes;
