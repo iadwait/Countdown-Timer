@@ -22,10 +22,15 @@ function countdown()
     console.log(new Date().getFullYear());
 
     nextYearId.innerHTML = "Until new beginnings " + (currentYear + 1)
-    daysId.innerHTML = days;
-    hoursId.innerHTML = hours;
-    minsId.innerHTML = minutes;
-    secId.innerHTML = seconds
+    daysId.innerHTML = formatTime(days);
+    hoursId.innerHTML = formatTime(hours);
+    minsId.innerHTML = formatTime(minutes);
+    secId.innerHTML = formatTime(seconds);
+}
+
+function formatTime(time)
+{
+    return time < 10 ? `0${time}` : time 
 }
 
 countdown()
